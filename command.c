@@ -10,6 +10,13 @@ instruction_t montycodes[] = {
 	{"pop", opcode_pop},
 	{"swap", opcode_swap},
 	{"nop", opcode_nop},
+	{"add", opcode_add},
+	{"sub", opcode_sub},
+	{"div", opcode_div},
+	{"mul", opcode_mul},
+	{"mod", opcode_mod},
+	{"rotl", opcode_rotl},
+	{"rotr", opcode_rotr},
 	{ NULL , NULL}
 };
 
@@ -23,8 +30,7 @@ instruction_t montycodes[] = {
  */
 void command(stack_t **head, char *line, unsigned int q)
 {
-	int i, w;
-	int cum, vgt;
+	int i, w, cum, vgt, ent;
 	char **check;
 
 	check = malloc(sizeof(char));
@@ -36,6 +42,9 @@ void command(stack_t **head, char *line, unsigned int q)
 			cum = atoi(check[1]);
 		for (i = 0; i < vgt; i++)
 		{
+			ent = comment(check[0]);
+			if (ent == 0)
+			{
 			if (montycodes[i].opcode == NULL)
 			{
 				printf("L%d: unknown instruction %s", q, check[0]);
@@ -46,6 +55,7 @@ void command(stack_t **head, char *line, unsigned int q)
 				plain.e = cum;
 				montycodes[i].f(head, q);
 				break;	
+			}
 			}
 		}
 	}

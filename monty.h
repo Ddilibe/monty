@@ -74,5 +74,13 @@ void opcode_pop(stack_t **h, unsigned int line_number);
 void opcode_swap(stack_t **h, unsigned int line_number);
 int count_stack(stack_t **h);
 void opcode_nop(stack_t **h, unsigned int line_number);
+void opcode_add(stack_t **h, unsigned int line_number);
+void opcode_sub(stack_t **h, unsigned int line_number);
+void opcode_div(stack_t **h, unsigned int line_number);
+void opcode_mul(stack_t **h, unsigned int line_number);
+void opcode_mod(stack_t **h, unsigned int line_number);
+int comment(char *c);
+void opcode_rotl(stack_t **h, unsigned int line_number);
+void opcode_rotr(stack_t **h, unsigned int line_number);
 
 #endif

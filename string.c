@@ -94,3 +94,19 @@ int count_stack(stack_t **h)
 	}
 	return (i);
 }
+
+int comment(char *c)
+{
+	int i, o;
+
+	i = strlen(c);
+	for(o = 0; o < i; o++)
+	{
+		if (c[o] == '#')
+		{
+			return (1);
+			break;
+		}
+	}
+	return (0);
+}

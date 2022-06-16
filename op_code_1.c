@@ -11,8 +11,7 @@
 void opcode_push(stack_t **head, unsigned int n)
 {
 	stack_t *current, *past;
-	
-	printf("Push\n");	
+		
 	if (n)
 	{
 		n = n + 1;
@@ -29,7 +28,6 @@ void opcode_push(stack_t **head, unsigned int n)
 		{
 			past->prev = NULL;
 			*head = past;
-			printf("Created a new node\n");
 		}
 		else
 		{
@@ -38,7 +36,6 @@ void opcode_push(stack_t **head, unsigned int n)
 				current = current->next;
 			current->next = past;
 			past->prev = current;
-			printf("Updated the stack\n");
 		}
 	}
 	else
@@ -62,7 +59,6 @@ void opcode_print(stack_t **h, unsigned int line)
 	stack_t *current;
 	int w = 0, p = 0;
 	
-	printf("Print\n");
 	if (*h != NULL) 
 	{
 		current = *h;
@@ -91,7 +87,6 @@ void opcode_pint(stack_t **h, unsigned int line_number)
 {
 	stack_t *current;
 
-	printf("Pint\n");
 	if(*h == NULL)
 	{
 		printf("L%d: can't pint, stack empty", line_number);
@@ -115,7 +110,6 @@ void opcode_pop(stack_t **h, unsigned int line_number)
 {
 	stack_t *current, *original;
 
-	printf("Pop\n");
 	if (*h == NULL)
 	{
 		printf("L%d: can't pop an empty stack", line_number);

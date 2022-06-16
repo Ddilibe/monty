@@ -19,13 +19,15 @@ void print_out(FILE *file)
 	head = NULL;
 	line = malloc(sizeof(char));
 	if ((line == NULL))
-		printf("Did Not allocate\n");
+	{
+		printf("Error: malloc failed");
+		exit(EXIT_FAILURE);
+	}
        
 	check = fgets(line, MAX_LENGTH,  file);
 
 	while (check != NULL)
 	{
-		printf("%s\n", line);
 		command(&head, line, q);
 		check = fgets(line, MAX_LENGTH, file);
 		q++;
