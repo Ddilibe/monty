@@ -24,6 +24,18 @@ typedef struct stack_s
         struct stack_s *prev;
         struct stack_s *next;
 } stack_t;
+
+/**
+ * struct new_data - data type for storing data
+ * @num: number
+ *
+ * Description: Newdata for easy movement
+ */
+typedef struct new_data
+{
+	int e;
+} data_n;
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -38,6 +50,10 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * New Data Type
+ */
+extern data_n plain;
 
 /* 
  * The prototypes for monty
@@ -50,8 +66,13 @@ void print_out(FILE *file);
 char *get_array(char *po, char **sopp);
 void opcode_push(stack_t **head, unsigned int n);
 void opcode_print(stack_t **h, unsigned int line);
-void command(stack_t **head, char *line);
+void command(stack_t **head, char *line, unsigned int q);
 int _atoi(char *s);
-
+int length_of_instr();
+void opcode_pint(stack_t **h, unsigned int line_number);
+void opcode_pop(stack_t **h, unsigned int line_number);
+void opcode_swap(stack_t **h, unsigned int line_number);
+int count_stack(stack_t **h);
+void opcode_nop(stack_t **h, unsigned int line_number);
 
 #endif

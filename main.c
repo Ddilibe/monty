@@ -1,5 +1,12 @@
 #include "monty.h"
 
+/**
+ * main - Run the code
+ * @argv: Number of arguments
+ * @argv: arguments passed
+ *
+ * Return: Always 0
+ */
 int main(int argc, char *argv[])
 {
 	int t;

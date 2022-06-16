@@ -1,13 +1,18 @@
 #include "monty.h"
 
-
+/**
+ * print_out - Function for reading the file
+ * @file: Input for the file
+ *
+ * Return: No return
+ */
 void print_out(FILE *file)
 {
 	char *line, *check;
 	int i = 1;
+	unsigned int q = 1;
 	stack_t *head;
-	
-	input = 1;
+
 	head = malloc(sizeof(stack_t));
 	if (head == NULL)
 		i = i * 0;
@@ -20,14 +25,21 @@ void print_out(FILE *file)
 
 	while (check != NULL)
 	{
-		printf("%s %d\n", line, input);
-		command(&head, line);
+		printf("%s\n", line);
+		command(&head, line, q);
 		check = fgets(line, MAX_LENGTH, file);
-		input++;
+		q++;
 	}
 	free(line);
 }
 
+/**
+ * get_array - Function to turn a line to an array
+ * @c: Input string
+ * @new_string: pointer to the pointer to the new string
+ *
+ * Return:  a poniter to a new string
+ */
 char *get_array(char *c, char **new_string )
 {
 	int count = 0;
@@ -45,5 +57,3 @@ char *get_array(char *c, char **new_string )
 		printf("%s\n", new_string[count]);
 	return (*new_string);
 }
-
-

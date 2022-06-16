@@ -80,3 +80,17 @@ int _atoi(char *s)
 	return (oi * pn);
 }
 
+
+int count_stack(stack_t **h)
+{
+	int i = 0;
+	stack_t *current;
+	
+	current = *h;
+	while( current != NULL)
+	{
+		current = current->next;
+		i++;
+	}
+	return (i);
+}

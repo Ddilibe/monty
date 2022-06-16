@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * file_extension - Function to check for a file extension
+ * @s: Input string to check
+ *
+ * Return: 1 if true 0 if false
+ */
 int file_extension(char *s)
 {	
 	char **ment;
@@ -19,6 +25,12 @@ int file_extension(char *s)
 	return (0);
 }
 
+/**
+ * open_file - Function to open a file
+ * @file: input to the file to be opened
+ *
+ * Return: content of file if true else close
+ */
 FILE *open_file(char *file)
 {
 	FILE *fd;
@@ -33,6 +45,12 @@ FILE *open_file(char *file)
 	return fd;
 }
 
+/**
+ * close_file - Function to close file
+ * @file: pointer to the file
+ *
+ * Return: No return
+ */
 void close_file(FILE *file)
 {
 	fclose(file);
