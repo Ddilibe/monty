@@ -32,7 +32,10 @@ int main(int argc, char *argv[])
 		else
 			printf("USAGE: monty file\n");
 	}
-	else 
+	else
+	{	
 		printf("USAGE: monty file\n");
-	return 0;
+		exit(EXIT_FAILURE);
+	}
+	return (0);
 }

@@ -22,7 +22,7 @@ int file_extension(char *s)
 		if (strcmp(ment[1], "m")== 0)
 			return (1);
 	}
-	return (0);
+	return (1);
 }
 
 /**
