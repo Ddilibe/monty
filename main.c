@@ -1,5 +1,8 @@
 #include "monty.h"
 
+data_n plain;
+
+
 /**
  * main - Run the code
  * @argv: Number of arguments

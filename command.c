@@ -1,7 +1,5 @@
 #include "monty.h"
 
-data_n plain;
-
 
 instruction_t montycodes[] = {
 	{"push", opcode_push},
