@@ -18,12 +18,12 @@ void print_out(FILE *file)
 		i = i * 0;
 	head = NULL;
 	line = malloc(sizeof(char));
-	if ((line == NULL))
+	if (line == NULL)
 	{
 		printf("Error: malloc failed");
 		exit(EXIT_FAILURE);
 	}
-       
+
 	check = fgets(line, MAX_LENGTH,  file);
 
 	while (check != NULL)
@@ -42,7 +42,7 @@ void print_out(FILE *file)
  *
  * Return:  a poniter to a new string
  */
-char *get_array(char *c, char **new_string )
+char *get_array(char *c, char **new_string)
 {
 	int count = 0;
 	char *delimiters = " ";
@@ -55,7 +55,7 @@ char *get_array(char *c, char **new_string )
 		token = strtok(c, delimiters);
 	}
 	count--;
-	for( ; count >= 0; count--)
+	for ( ; count >= 0; count--)
 		printf("%s\n", new_string[count]);
 	return (*new_string);
 }

@@ -7,10 +7,10 @@
  * Return: 1 if true 0 if false
  */
 int file_extension(char *s)
-{	
+{
 	char **ment;
 	char *w;
-	
+
 	w = malloc(sizeof(char));
 	if (w == NULL)
 		return (0);
@@ -19,7 +19,7 @@ int file_extension(char *s)
 	string_tokenizer(w, ment, ".");
 	if (ment[1])
 	{
-		if (strcmp(ment[1], "m")== 0)
+		if (strcmp(ment[1], "m") == 0)
 			return (1);
 	}
 	return (1);
@@ -34,15 +34,16 @@ int file_extension(char *s)
 FILE *open_file(char *file)
 {
 	FILE *fd;
+
 	fd = fopen(file, "r");
 
 	if (fd == NULL)
-        {
-        	printf("Error: Can't open file %s\n", file);
+	{
+		printf("Error: Can't open file %s\n", file);
 		exit(EXIT_FAILURE);
 	}
 
-	return fd;
+	return (fd);
 }
 
 /**

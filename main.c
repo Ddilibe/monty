@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 		t = file_extension(argv[1]);
 		if (t == 1)
 		{
-			file = open_file( argv[1]);
+			file = open_file(argv[1]);
 			if (file != NULL)
 			{
 				print_out(file);
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 			printf("USAGE: monty file\n");
 	}
 	else
-	{	
+	{
 		printf("USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}

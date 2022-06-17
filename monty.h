@@ -1,5 +1,5 @@
 #ifndef _MONTY_H_
-#define _MAIN_H_
+#define _MONTY_H_
 
 #define MAX_LENGTH 80
 

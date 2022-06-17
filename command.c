@@ -17,7 +17,7 @@ instruction_t montycodes[] = {
 	{"mod", opcode_mod},
 	{"rotl", opcode_rotl},
 	{"rotr", opcode_rotr},
-	{ NULL , NULL}
+	{ NULL, NULL}
 };
 
 /**
@@ -36,7 +36,7 @@ void command(stack_t **head, char *line, unsigned int q)
 	check = malloc(sizeof(char));
 	vgt = length_of_instr();
 	w = string_tokenizer(line, check, " \n	");
-	if (w < 10) 
+	if (w < 10)
 	{
 		if (check[1])
 			cum = atoi(check[1]);
@@ -54,7 +54,7 @@ void command(stack_t **head, char *line, unsigned int q)
 			{
 				plain.e = cum;
 				montycodes[i].f(head, q);
-				break;	
+				break;
 			}
 			}
 		}
@@ -70,6 +70,7 @@ void command(stack_t **head, char *line, unsigned int q)
 int length_of_instr(void)
 {
 	int i = 1;
+
 	while (montycodes[i].opcode != NULL)
 	{
 		i++;

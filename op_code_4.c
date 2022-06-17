@@ -6,15 +6,16 @@ void opcode_rotr(stack_t **h, unsigned int line_number)
 	int i = 0;
 
 	current = malloc(sizeof(stack_t));
-	current = *h;
+	if (current == NULL)
+		exit(EXIT_FAILURE);
 	original = *h;
 	while(original->next != NULL)
 		original = original->next;
 	while (original != NULL)
-	{
-		current->n = original->n;
-		current->prev = original->prev;
-		current = current->next;
+	{	
+		plain.e = original->n;
+		printf("Rotr: %d, Plain.e: %d\n", original->n, plain.e);
+		opcode_push(&current, original->n);
 		original = original->prev;
 	}
 	*h = current;
