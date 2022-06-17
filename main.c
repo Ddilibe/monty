@@ -5,7 +5,7 @@ data_n plain;
 
 /**
  * main - Run the code
- * @argv: Number of arguments
+ * @argc: Number of arguments
  * @argv: arguments passed
  *
  * Return: Always 0

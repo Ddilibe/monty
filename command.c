@@ -1,23 +1,6 @@
 #include "monty.h"
 
 
-instruction_t montycodes[] = {
-	{"push", opcode_push},
-	{"pall", opcode_print},
-	{"pint", opcode_pint},
-	{"pop", opcode_pop},
-	{"swap", opcode_swap},
-	{"nop", opcode_nop},
-	{"add", opcode_add},
-	{"sub", opcode_sub},
-	{"div", opcode_div},
-	{"mul", opcode_mul},
-	{"mod", opcode_mod},
-	{"rotl", opcode_rotl},
-	{"rotr", opcode_rotr},
-	{ NULL, NULL}
-};
-
 /**
  * command - Function to carry the command of a fileline
  * @head: pointer to the pointer to the head
@@ -30,6 +13,23 @@ void command(stack_t **head, char *line, unsigned int q)
 {
 	int i, w, cum, vgt, ent;
 	char **check;
+
+	instruction_t montycodes[] = {
+        {"push", opcode_push},
+        {"pall", opcode_print},
+        {"pint", opcode_pint},
+        {"pop", opcode_pop},
+        {"swap", opcode_swap},
+        {"nop", opcode_nop},
+        {"add", opcode_add},
+        {"sub", opcode_sub},
+        {"div", opcode_div},
+        {"mul", opcode_mul},
+        {"mod", opcode_mod},
+        {"rotl", opcode_rotl},
+        {"rotr", opcode_rotr},
+        { NULL, NULL}
+};
 
 	check = malloc(sizeof(char));
 	vgt = length_of_instr();
@@ -68,6 +68,23 @@ void command(stack_t **head, char *line, unsigned int q)
 int length_of_instr(void)
 {
 	int i = 1;
+
+	instruction_t montycodes[] = {
+        {"push", opcode_push},
+        {"pall", opcode_print},
+        {"pint", opcode_pint},
+        {"pop", opcode_pop},
+        {"swap", opcode_swap},
+        {"nop", opcode_nop},
+        {"add", opcode_add},
+        {"sub", opcode_sub},
+        {"div", opcode_div},
+        {"mul", opcode_mul},
+        {"mod", opcode_mod},
+        {"rotl", opcode_rotl},
+        {"rotr", opcode_rotr},
+        { NULL, NULL}
+};
 
 	while (montycodes[i].opcode != NULL)
 	{
