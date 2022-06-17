@@ -2,7 +2,6 @@
 
 data_n plain;
 
-
 /**
  * main - Run the code
  * @argc: Number of arguments
@@ -25,11 +24,14 @@ int main(int argc, char *argv[])
 			{
 				print_out(file);
 				close_file(file);
-				return (0);
+				exit(EXIT_SUCCESS);
 			}
 		}
 		else
+		{
 			printf("USAGE: monty file\n");
+			exit(EXIT_FAILURE);
+		}
 	}
 	else
 	{
