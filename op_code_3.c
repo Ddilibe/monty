@@ -1,16 +1,24 @@
 #include "monty.h"
 
+/**
+ * opcode_div - A function that does nothing
+ * @h: Pointer to the pointer to the head
+ * @line_number: Line number in a file
+ *
+ * Return: No return
+ */
+
 void opcode_div(stack_t **h, unsigned int line_number)
 {
 	stack_t *current, *original;
 	int w;
-	
+
 	w = count_stack(h);
 	if (w > 2)
 	{
 		current = *h;
-		
-		while(current->next != NULL)
+
+		while (current->next != NULL)
 		{
 			original = current;
 			current = current->next;
@@ -20,7 +28,7 @@ void opcode_div(stack_t **h, unsigned int line_number)
 			printf("L%d: division by zero\n", line_number);
 			exit(EXIT_FAILURE);
 		}
-		original->n = original->n/current->n;
+		original->n = original->n / current->n;
 		original->next = NULL;
 		free(current);
 	}
@@ -31,17 +39,25 @@ void opcode_div(stack_t **h, unsigned int line_number)
 	}
 }
 
+/**
+ * opcode_mul - A function that does nothing
+ * @h: Pointer to the pointer to the head
+ * @line_number: Line number in a file
+ *
+ * Return: No return
+ */
+
 void opcode_mul(stack_t **h, unsigned int line_number)
 {
 	stack_t *current, *original;
 	int w;
-	
+
 	w = count_stack(h);
 	if (w > 2)
 	{
 		current = *h;
-		
-		while(current->next != NULL)
+
+		while (current->next != NULL)
 		{
 			original = current;
 			current = current->next;
@@ -57,6 +73,14 @@ void opcode_mul(stack_t **h, unsigned int line_number)
 	}
 }
 
+/**
+ * opcode_mod - A function that does nothing
+ * @h: Pointer to the pointer to the head
+ * @line_number: Line number in a file
+ *
+ * Return: No return
+ */
+
 void opcode_mod(stack_t **h, unsigned int line_number)
 {
 	stack_t *current, *original;
@@ -66,8 +90,8 @@ void opcode_mod(stack_t **h, unsigned int line_number)
 	if (w > 2)
 	{
 		current = *h;
-		
-		while(current->next != NULL)
+
+		while (current->next != NULL)
 		{
 			original = current;
 			current = current->next;
@@ -88,21 +112,28 @@ void opcode_mod(stack_t **h, unsigned int line_number)
 	}
 }
 
+/**
+ * opcode_rotl - A function that does nothing
+ * @h: Pointer to the pointer to the head
+ * @line_number: Line number in a file
+ *
+ * Return: No return
+ */
 
 void opcode_rotl(stack_t **h, unsigned int line_number)
 {
 	stack_t *current, *original, *past;
 	int i = 0;
-	
+
 	current = *h;
 	past = *h;
-	
+
 	while (current->next != NULL)
 	{
 		original = current;
 		current = current->next;
 	}
-	
+
 	original->next = NULL;
 	current->prev = NULL;
 	past->prev = current;

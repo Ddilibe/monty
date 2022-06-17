@@ -59,6 +59,14 @@ void opcode_nop(stack_t **h, unsigned int line_number)
 		current = current->next;
 }
 
+/**
+ * opcode_add - A function that does nothing
+ * @h: Pointer to the pointer to the head
+ * @line_number: Line number in a file
+ *
+ * Return: No return
+ */
+
 void opcode_add(stack_t **h, unsigned int line_number)
 {
 	stack_t *current, *original;
@@ -85,17 +93,24 @@ void opcode_add(stack_t **h, unsigned int line_number)
 	}
 }
 
+/**
+ * opcode_sub - A function that does nothing
+ * @h: Pointer to the pointer to the head
+ * @line_number: Line number in a file
+ *
+ * Return: No return
+ */
 
 void opcode_sub(stack_t **h, unsigned int line_number)
 {
 	stack_t *current, *original;
 	int w;
-	
+
 	w = count_stack(h);
 	if (w > 2)
 	{
 		current = *h;
-		
+
 		while (current->next != NULL)
 		{
 			original = current;

@@ -48,7 +48,7 @@ void opcode_push(stack_t **head, unsigned int n)
 
 
 /**
- * print_dlistint - A function that prints all the elements in a linked list
+ * opcode_print - A function that prints all the elements in a linked list
  * @h: Pointer to the head of the linked list
  * @line: Line number in a file
  * Return: No return
