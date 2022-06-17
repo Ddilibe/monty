@@ -63,7 +63,7 @@ void opcode_print(stack_t **h, unsigned int line)
 	{
 		current = *h;
 		while (current->next != NULL)
-		{	
+		{
 			current = current->next;
 			w++;
 		}

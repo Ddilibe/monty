@@ -85,7 +85,7 @@ void opcode_mod(stack_t **h, unsigned int line_number)
 {
 	stack_t *current, *original;
 	int w;
-	
+
 	w = count_stack(h);
 	if (w > 2)
 	{
