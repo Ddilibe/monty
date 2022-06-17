@@ -28,7 +28,9 @@ char *_strcpy(char *dest, char *src)
 /**
  * split_line - Function to split
  * the inputed commands into arguments
- * @line: Inputed argument
+ * @str: string to divide
+ * @tokens: pointer at which strings should be stored
+ * @delimiter: delimiters to be used
  * Return: Return the argumented inputs
  */
 int string_tokenizer(char *str, char **tokens, char *delimiter)
