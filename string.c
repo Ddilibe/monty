@@ -31,17 +31,19 @@ char *_strcpy(char *dest, char *src)
  * @line: Inputed argument
  * Return: Return the argumented inputs
  */
-int string_tokenizer(char* str, char **tokens, char *delimiter)
+int string_tokenizer(char *str, char **tokens, char *delimiter)
 {
 	int tokens_count = 0;
-	char* token = strtok(str, delimiter);
-	while (token != NULL){
+	char *token = strtok(str, delimiter);
+
+	while (token != NULL)
+	{
 		(tokens[tokens_count]) = token;
 		tokens_count++;
 		token = strtok(NULL, delimiter);
 	}
 	tokens[tokens_count++] = NULL;
-	return tokens_count;
+	return (tokens_count);
 }
 
 
@@ -81,13 +83,19 @@ int _atoi(char *s)
 }
 
 
+/**
+ * count_stack - Function for counting the stack
+ * @h: pointer to the pointer to the head
+ *
+ * Return: the numer of elements in s stack
+ */
 int count_stack(stack_t **h)
 {
 	int i = 0;
 	stack_t *current;
-	
+
 	current = *h;
-	while( current != NULL)
+	while (current != NULL)
 	{
 		current = current->next;
 		i++;
@@ -95,17 +103,22 @@ int count_stack(stack_t **h)
 	return (i);
 }
 
+/**
+ * comment - Function to determin argumented line
+ * @c: Pointer to a string
+ *
+ * Return: 1 if true another if false
+ */
 int comment(char *c)
 {
 	int i, o;
 
 	i = strlen(c);
-	for(o = 0; o < i; o++)
+	for (o = 0; o < i; o++)
 	{
 		if (c[o] == '#')
 		{
 			return (1);
-			break;
 		}
 	}
 	return (0);
