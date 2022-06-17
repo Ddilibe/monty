@@ -11,7 +11,7 @@
 void opcode_push(stack_t **head, unsigned int n)
 {
 	stack_t *current, *past;
-		
+
 	if (n)
 	{
 		n = n + 1;
@@ -23,7 +23,7 @@ void opcode_push(stack_t **head, unsigned int n)
 
 		past->n = plain.e;
 		past->next = NULL;
-	
+
 		if (*head == NULL)
 		{
 			past->prev = NULL;
@@ -58,8 +58,8 @@ void opcode_print(stack_t **h, unsigned int line)
 {
 	stack_t *current;
 	int w = 0, p = 0;
-	
-	if (*h != NULL) 
+
+	if (*h != NULL)
 	{
 		current = *h;
 		while (current->next != NULL)
@@ -67,7 +67,7 @@ void opcode_print(stack_t **h, unsigned int line)
 			current = current->next;
 			w++;
 		}
-		while(current != NULL)
+		while (current != NULL)
 		{
 			printf("%d\n", current->n);
 			current = current->prev;
@@ -87,14 +87,14 @@ void opcode_pint(stack_t **h, unsigned int line_number)
 {
 	stack_t *current;
 
-	if(*h == NULL)
+	if (*h == NULL)
 	{
 		printf("L%d: can't pint, stack empty", line_number);
 		exit(EXIT_FAILURE);
 	}
-	
+
 	current = *h;
-	while(current->next != NULL)
+	while (current->next != NULL)
 		current = current->next;
 	printf("%d\n", current->n);
 }

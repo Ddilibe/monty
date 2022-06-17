@@ -69,7 +69,7 @@ void opcode_add(stack_t **h, unsigned int line_number)
 	{
 		current = *h;
 
-		while(current->next != NULL)
+		while (current->next != NULL)
 		{
 			original = current;
 			current = current->next;
@@ -88,27 +88,26 @@ void opcode_add(stack_t **h, unsigned int line_number)
 
 void opcode_sub(stack_t **h, unsigned int line_number)
 {
-        stack_t *current, *original;
-        int w;
-
-        w = count_stack(h);
-        if (w > 2)
-        {
-                current = *h;
-
-                while(current->next != NULL)
-                {
-                        original = current;
-                        current = current->next;
-                }
-                original->n = original->n - current->n;
-                original->next = NULL;
-                free(current);
-        }
-        else
-        {
-                printf("L%d: can't sub, stack too short\n", line_number);
-                exit(EXIT_FAILURE);
-        }
+	stack_t *current, *original;
+	int w;
+	
+	w = count_stack(h);
+	if (w > 2)
+	{
+		current = *h;
+		
+		while (current->next != NULL)
+		{
+			original = current;
+			current = current->next;
+		}
+		original->n = original->n - current->n;
+		original->next = NULL;
+		free(current);
+	}
+	else
+	{
+		printf("L%d: can't sub, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 }
-
